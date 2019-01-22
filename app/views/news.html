@@ -1,0 +1,25 @@
+<div ng-controller="newsController as news">
+
+    <div class="pb-5">
+        <h1 class="display-4 text-center">{{news.title}}</h1>
+    </div>
+    
+
+    <table class="table table-striped">
+        <thead>
+            <tr class="row">
+                <th class="col-3">Published</th>
+                <th class="col">Title</th>
+                <th class="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row" ng-repeat="google in news.googleNews">
+                <td class="col-3">{{google.publishedAt | date:'medium'}}<br>{{google.source.name}}</td>
+                <td class="col"><a href="{{google.url}}">{{google.title}}</a></td>
+                <td class="col">{{google.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
